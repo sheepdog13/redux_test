@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route, Routes } from 'react-router-dom';
+import Board from './Page/Board';
+import BoardPage from './Page/BoardPage';
+import BoardWirteForm from './Page/BoardWirteForm';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path='/board' element={<Board />}></Route>
+        <Route path='/board/:id' element={<BoardPage />}></Route>
+        <Route path='/board/modifyform' element={<BoardWirteForm />}></Route>
+      </Routes>
     </div>
   );
 }
